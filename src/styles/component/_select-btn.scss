@@ -1,0 +1,38 @@
+.select-btn-box {
+    padding: 15px 10px;
+    text-align: center;
+    .select-btn {
+        margin-right: 86px;
+        min-height: 24px;
+        display: inline-block;
+        border: none;
+        border-radius: $border-radius-base;
+        text-decoration: none !important;
+        transition-property: opacity, background-color, color, box-shadow;
+        transition-duration: 0.15s;
+        transition-delay: 0s;
+        transition-timing-function: ease-in-out;
+
+        &:hover {
+            box-shadow: 1px 1px 8px 6px rgba(0, 0, 0, 0.03);
+            cursor: pointer;
+        }
+
+        &.active {
+            background-color: #2D75CC;
+            color: #ffffff;
+        }
+
+        &.disable {
+            &:hover {
+                cursor: no-drop;
+            }
+            opacity: 0.3;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+}

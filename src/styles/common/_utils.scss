@@ -1,0 +1,48 @@
+.helper-clearfix {
+    &:before, &:after {
+        content: ' ';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    input,select{
+        transform: scale(0);
+    }
+}
+
+// 表单错误提示语
+.alert.alert-danger {
+    color: #ee6d6b;
+    font-size: 12px;
+}
+
+@mixin hover_cursor($cursor-type:pointer,$box-shadow:none) {
+    transition: all .3s;
+    &:hover {
+        cursor: $cursor-type;
+        box-shadow: $box-shadow;
+    }
+}
+
+.abs-ico {
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    display: block;
+
+}

@@ -1,0 +1,27 @@
+.datalist {
+    .datalist-data {
+        margin: 0;
+        padding: 0;
+    }
+
+    .datalist-data > li {
+        list-style-type: none;
+    }
+
+    .datalist-emptymessage {
+        padding: .5em .75em;
+    }
+
+    .datalist-content {
+        overflow: auto;
+    }
+
+    .paginator-top {
+        border-bottom: 0 none;
+    }
+    .paginator-bottom {
+        border-top: 0 none;
+    }
+
+
+}

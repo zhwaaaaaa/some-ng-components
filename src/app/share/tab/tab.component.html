@@ -1,0 +1,15 @@
+<div class="tab">
+  <div class="tab-head">
+    <ul class="tab-list">
+      <li *ngFor="let t of titleList;index as i" [ngClass]="{active:currentIndex === i}" (click)="showIndex(t,i)">
+        <ng-container
+          *ngTemplateOutlet="t.template;context {$implicit:t.tabKey,index:i,active:currentIndex === i}"></ng-container>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-body" [class.border-line]="showBorder">
+    <ng-container *ngTemplateOutlet="contentTemp.template;context {$implicit:contentTemp.tabKey,index:currentIndex}">
+    </ng-container>
+  </div>
+
+</div>

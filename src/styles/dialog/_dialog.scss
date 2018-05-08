@@ -1,0 +1,212 @@
+.dialog .icon {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #808080;
+    border-radius: 50%;
+    margin: 20px auto;
+    padding: 0;
+    position: relative;
+    box-sizing: content-box;
+    overflow: hidden;
+    display: block;
+}
+
+.dialog .icon.error {
+    border-color: lighten($brand-danger, 10%);
+}
+
+.dialog .icon.error .x-mark {
+    position: relative;
+    display: block;
+}
+
+.dialog .icon.error .line {
+    position: absolute;
+    height: 5px;
+    width: 47px;
+    background-color: lighten($brand-danger, 10%);
+    display: block;
+    top: 37px;
+    border-radius: 2px;
+}
+
+.dialog .icon.error .line.left {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 17px;
+}
+
+.dialog .icon.error .line.right {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 16px;
+}
+
+.dialog .icon.warning {
+    border-color: lighten($brand-warning, 10%);
+}
+
+.dialog .icon.warning .body {
+    position: absolute;
+    width: 5px;
+    height: 47px;
+    left: 50%;
+    top: 10px;
+    border-radius: 2px;
+    margin-left: -2px;
+    background-color: lighten($brand-warning, 10%);
+}
+
+.dialog .icon.warning .dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-left: -3px;
+    left: 50%;
+    bottom: 10px;
+    background-color: lighten($brand-warning, 10%);
+}
+
+.dialog .icon.info {
+    border-color: lighten($brand-info, 10%);
+}
+
+.dialog .icon.info::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 29px;
+    left: 49%;
+    bottom: 24px;
+    border-radius: 2px;
+    margin-left: -2px;
+    background-color: lighten($brand-info, 10%);
+}
+
+.dialog .icon.info::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-left: -3px;
+    top: 19px;
+    background-color: lighten($brand-info, 10%);
+}
+
+.dialog .icon.success {
+    border-color: lighten($brand-success, 10%);
+}
+
+.dialog .icon.success::before, .dialog .icon.success::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.dialog .icon.success::before {
+    border-radius: 120px 0 0 120px;
+    top: -7px;
+    left: -33px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 60px 60px;
+    transform-origin: 60px 60px;
+}
+
+.dialog .icon.success::after {
+    border-radius: 0 120px 120px 0;
+    top: -11px;
+    left: 30px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 60px;
+    transform-origin: 0 60px;
+}
+
+.dialog .icon.success .placeholder {
+    width: 80px;
+    height: 80px;
+    border: 4px solid $brand-info, 10%;
+    border-radius: 50%;
+    box-sizing: content-box;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    z-index: 2;
+}
+
+.dialog .icon.success .fix {
+    width: 5px;
+    height: 90px;
+    background-color: #fff;
+    position: absolute;
+    left: 28px;
+    top: 8px;
+    z-index: 1;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.dialog .icon.success .line {
+    height: 5px;
+    background-color: lighten($brand-success, 10%);;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 2;
+}
+
+.dialog .icon.success .line.tip {
+    width: 25px;
+    left: 14px;
+    top: 46px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.dialog .icon.success .line.long {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.alert-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 22px;
+    color: #555555;
+}
+
+.alert-message {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #777777;
+    margin: 5px auto;
+}
+
+.alert-btn-bar {
+    text-align: center;
+    margin: 10px auto 10px auto;
+    display: block;
+
+}
+
+.alert-btn-bar button {
+    margin: 10px 6px;
+}
+
+.alert-btn-bar button:focus, .alert-btn-bar button:active, .alert-btn-bar button:visited {
+    outline: none;
+}

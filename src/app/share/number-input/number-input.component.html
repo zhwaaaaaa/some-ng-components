@@ -1,0 +1,17 @@
+<div tabindex="2" (focus)="onInputFocus()" (blur)="onInputBlur()" class="number-input-wrap"
+     [ngClass]="{'disable':disabled}">
+  <input #inputEle type="text" [ngClass]="inputClass" [disabled]="disabled" (input)="doInputBlur($event)"
+         (blur)="doInputBlur($event)" [value]="getValueStr()">
+  <div class="operation-wrap">
+    <div class="operation-box">
+      <div class="operation" [ngClass]="{'responsive':!disabled}" (click)="add($event)">
+        <span class="icon-angle-up"></span>
+      </div>
+      <div class="operation" [ngClass]="{'responsive':!disabled}" (click)="sub($event)">
+        <span class="icon-angle-down"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+

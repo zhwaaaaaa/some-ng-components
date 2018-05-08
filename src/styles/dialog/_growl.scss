@@ -1,0 +1,44 @@
+.growl-container {
+    position: fixed;
+    top: 140px;
+    right: 30px;
+    width: 269px;
+    z-index: 2500;
+}
+
+.growl {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #9B9B9B;
+    height: 32px;
+    line-height: 32px;
+    border-radius: $border-radius-base;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    box-shadow: 1px 0 8px 8px rgba(0, 0, 0, 0.06);
+    .text {
+        margin-left: 20px;
+    }
+
+    .ico {
+        font-size: 16px;
+        @include hover_cursor(pointer);
+        &.success {
+            color: $brand-success;
+        }
+        &.info {
+            color: $brand-info;
+        }
+        &.danger {
+            color: $brand-danger;
+        }
+        &.warning {
+            color: $brand-warning;
+        }
+        &.primary {
+            color: $brand-primary;
+        }
+    }
+}

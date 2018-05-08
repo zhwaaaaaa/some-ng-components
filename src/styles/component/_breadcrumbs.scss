@@ -1,0 +1,29 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+$breadcrumb-separator: "/" !default;
+
+.breadcrumb {
+    padding: 0.6em 1em;
+    list-style: none;
+    border-radius: $border-radius-base;
+    margin: 0;
+    > li {
+        display: inline-block;
+        a {
+            color: #999999;
+            text-decoration: none;
+        }
+        + li:before {
+            // [converter] Workaround for https://github.com/sass/libsass/issues/1115
+            $nbsp: "\00a0";
+            content: "#{$breadcrumb-separator}#{$nbsp}"; // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 5px;
+            color: #cccccc;
+        }
+    }
+
+    > .active {
+        color: #777777;
+    }
+}

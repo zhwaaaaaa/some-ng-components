@@ -1,0 +1,68 @@
+.paginator {
+    margin: 0;
+    text-align: center;
+    padding: .125em;
+
+    &-element {
+        text-decoration: none;
+        display: inline-block;
+        @include button_shape(0, 4px, $text-size-base, $border-radius-base);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-right: 5px;
+        &.state-disabled {
+            @include hover_cursor(no-drop);
+        }
+    }
+
+    &-element.active {
+        border-color: $gray-light;
+        color: #ffffff;
+        background-color: $brand-primary;
+    }
+
+    &-first, &-last {
+        padding-left: 12px;
+        padding-right: 12px;
+        border-color: #E8E8E8;
+        background-color: #E8E8E8;
+        color: #443f3f;
+        &.state-disabled {
+            background-color: lighten(#E8E8E8, 8%);
+            color: rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &-page, &-next, &-prev {
+        width: 30px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.65);
+        background: #FFFFFF;
+        border: 1px solid #D9D9D9;
+
+        &.state-disabled {
+            background-color: #efefef;
+            color: rgba(0, 0, 0, 0.25);
+        }
+
+    }
+
+    &-page {
+        &.state-active {
+            color: #ffffff;
+            background: #1890FF;
+            border-color: #1890FF;
+            @include hover_cursor(normal !important);
+        }
+    }
+
+    &-left-content {
+        display: inline-block;
+    }
+    &-right-content {
+        display: inline-block;
+    }
+}
+

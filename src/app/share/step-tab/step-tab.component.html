@@ -1,0 +1,9 @@
+<div>
+  <app-step [stepOptions]="stepTabOptions" [responsive]="true" [showIndex]="currentIndex"
+            (showIndexChange)="onClickChangeTab($event)">
+  </app-step>
+</div>
+<div class="step-tab-content">
+  <ng-container *ngTemplateOutlet="contentTemp.template;context {$implicit:contentTemp.tabKey,index:currentIndex}">
+  </ng-container>
+</div>

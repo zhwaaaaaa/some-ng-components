@@ -1,0 +1,20 @@
+<div class="datalist">
+
+  <div class="datalist-content">
+    <ul class="datalist-data">
+      <li *ngFor="let item of dataToRender;let i = index;trackBy trackBy">
+        <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: (i + first)}"></ng-container>
+      </li>
+    </ul>
+  </div>
+  <div class="datalist-foot">
+    <ng-template #totalShowPanel>
+      共{{totalRecords}}条
+    </ng-template>
+    <app-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks"
+                   (onPageChange)="paginate($event)" styleClass="paginator-bottom"
+                   [templateRight]="showTotalOnPage&&totalShowPanel"
+                   *ngIf="paginator">
+    </app-paginator>
+  </div>
+</div>

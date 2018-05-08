@@ -1,0 +1,71 @@
+.panel {
+    margin: 10px 15px;
+    background-color: #ffffff;
+    padding: 0 0.8em 0.6em 0.8em;
+    border-radius: $border-radius-sm;
+
+    .panel-header {
+        padding: 0.2em;
+        position: relative;
+        min-height: 62px;
+        padding-right: 50px;
+        box-sizing: border-box;
+        margin-left: 12px;
+        .fold {
+            position: absolute;
+            right: 12px;
+            top: 24px;
+            color: #999999;
+            width: 18px;
+            height: 18px;
+            line-height: 1;
+            font-size: 14px;
+            transition: all 0.2s linear;
+            text-align: center;
+            &:hover {
+                cursor: pointer;
+                color: #777777;
+            }
+        }
+    }
+    .panel-content-wrap {
+        overflow: hidden;
+        box-sizing: border-box;
+
+        .panel-content {
+            margin-top: 8px;
+            padding: 0 32px 8px 32px;
+        }
+    }
+
+}
+
+.panel-header-line {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+[panelHeader] {
+    @extend .helper-clearfix;
+}
+
+.panel-title {
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    margin-top: 18px;
+    margin-left: 0;
+}
+
+.panel-link {
+    font-size: 14px;
+    float: right;
+    margin-top: 16px;
+    margin-right: 10px;
+
+    a, a:hover, a:active {
+        text-decoration: none;
+    }
+
+}
+
+

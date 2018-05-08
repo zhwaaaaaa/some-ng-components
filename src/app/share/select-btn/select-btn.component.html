@@ -1,0 +1,8 @@
+<div class="select-btn-box">
+  <div class="select-btn" *ngFor="let o of options;first as f;last as l;" [ngClass]="_value===o.value?'active':''"
+       (click)="select(o.value)">
+    <ng-container
+      *ngTemplateOutlet="itemView;context:{$implicit:o,active:_value===o.value,first:f,last:l}">
+    </ng-container>
+  </div>
+</div>

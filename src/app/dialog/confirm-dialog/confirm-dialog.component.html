@@ -1,0 +1,22 @@
+<div class="text-center">
+  <div [ngSwitch]="config.theme">
+    <div class="icon error" *ngSwitchCase="'danger'"><span class="x-mark"><span class="line left"></span><span
+      class="line right"></span></span></div>
+    <div class="icon warning" *ngSwitchCase="'warning'" style="display: block;"><span class="body"></span> <span
+      class="dot"></span></div>
+    <div class="icon info" *ngSwitchCase="'info'" style="display: block;"></div>
+    <div class="icon success" *ngSwitchCase="'success'" style="display: block;"><span class="line tip"></span> <span
+      class="line long animate-success-long"></span>
+      <div class="placeholder"></div>
+      <div class="fix"></div>
+    </div>
+  </div>
+
+  <h3 class="alert-title" *ngIf="!!config.title">{{config.title}}</h3>
+  <p class="alert-message" *ngIf="!!config.message">{{config.message}}</p>
+  <div class="alert-btn-bar">
+    <button class="btn" [ngClass]="'btn-default'" (click)="clickNo()">{{config.negativeBtn}}</button>
+    <button class="btn" [ngClass]="'btn-'+config.theme" (click)="clickYes()">{{config.positiveBtn}}</button>
+  </div>
+</div>
+

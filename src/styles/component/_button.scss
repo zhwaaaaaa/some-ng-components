@@ -1,0 +1,173 @@
+//import
+//function
+@mixin button_shape($padding-horizontal,$padding-vertical,$font-size,$radius, $border-width:1px) {
+    border: {
+        style: solid;
+        width: $border-width;
+        radius: $radius;
+    }
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+}
+
+@mixin fill_btn_color($bg-color,$color,$border-color:$color) {
+    border-color: $border-color;
+    background-color: $bg-color;
+    color: $color;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        border-color: darken($border-color, 7%);
+        color: darken($color, 7%);
+    }
+    &:active {
+        border-color: darken($border-color, 10%);
+        color: darken($color, 10%);
+    }
+    &:disabled {
+        border-color: lighten($border-color, 15%);
+        color: lighten($color, 15%);
+    }
+}
+
+@mixin button_color($bg-color,$color,$border-color:$bg-color) {
+    border-color: $border-color;
+    background-color: $bg-color;
+    color: $color;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        border-color: darken($border-color, 4%);
+        background-color: darken($bg-color, 4%);
+        color: $color;
+    }
+    &:active {
+        border-color: darken($border-color, 8%);
+        background-color: darken($bg-color, 8%);
+        color: $color;
+    }
+    &:disabled {
+        border-color: lighten($border-color, 15%);
+        background-color: lighten($bg-color, 15%);
+    }
+}
+
+//fix
+button, a.btn, a.fill-btn {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus, &:active, &:hover {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+.fill-btn:disabled, .btn:disabled {
+    cursor: no-drop;
+}
+
+//style
+.btn {
+    @include button_shape($button_padding_horizontal_base, $button_padding_vertical_base, $text-size-base, $border-radius-base);
+    @include button_color($gray-lighter, #ffffff);
+}
+
+.btn.btn-default {
+    @include button_color(#d4d4d4, #ffffff);
+}
+
+.btn.btn-primary {
+    @include button_color($brand-primary, #ffffff);
+}
+
+.btn.btn-warning {
+    @include button_color($text-color-warning, #ffffff);
+}
+
+.btn.btn-success {
+    @include button_color($brand-success, #ffffff);
+}
+
+.btn.btn-danger {
+    @include button_color($brand-danger, #ffffff);
+}
+
+.btn.btn-info {
+    @include button_color($text-color-info, #ffffff);
+}
+
+.btn.btn-sm, .fill-btn.btn-sm {
+    @include button_shape($button_padding_horizontal_sm, $button_padding_vertical_sm*1.2, $text-size-sm, $border-radius-base);
+}
+
+.btn.btn-xs, .fill-btn.btn-xs {
+    @include button_shape($button_padding_horizontal_xs, $button_padding_vertical_xs, $text-size-sm, $border-radius-base);
+}
+
+.btn.btn-lg, .fill-btn.btn-lg {
+    @include button_shape($button_padding_horizontal_lg, $button_padding_vertical_lg, $text-size-base, $border-radius-base);
+}
+
+.fill-btn {
+    @include button_shape($button_padding_horizontal_base, $button_padding_vertical_base, $text-size-base, $border-radius-base);
+}
+
+.fill-btn.btn-default {
+    @include fill_btn_color(#ffffff, $text-color-lighter, #979797);
+}
+
+.fill-btn.btn-primary {
+    @include fill_btn_color($brand-primary, #ffffff);
+}
+
+.fill-btn.btn-warning {
+    @include fill_btn_color($text-color-warning, #ffffff);
+}
+
+.fill-btn.btn-success {
+    @include fill_btn_color($brand-success, #ffffff);
+}
+
+.fill-btn.btn-danger {
+    @include fill_btn_color($brand-danger, #ffffff);
+}
+
+.fill-btn.btn-info {
+    @include fill_btn_color($text-color-info, #ffffff);
+}
+
+.file-upload-btn {
+    @extend .fill-btn.btn-default;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.btn-radius {
+    @include button_shape($button_padding_horizontal_base, $button_padding_vertical_base, $text-size-base, ($text-size-lg*1.4+2*$button_padding_vertical_base+2)/2);
+}
+
+.back-button {
+    height: 62px;
+    width: 62px;
+    border-radius: 50%;
+    background-color: #ff9966;
+    color: #fff;
+    z-index: 999;
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    cursor: pointer;
+}
+
+.back-button span {
+    display: block;
+    margin: 20px 16px;
+}

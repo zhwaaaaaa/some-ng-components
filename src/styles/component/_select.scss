@@ -1,0 +1,50 @@
+
+.select {
+    @extend .calendar;
+    .select-content {
+        height: 30px;
+        line-height: 30px;
+        padding-left: 8px;
+    }
+    text-align: left;
+    &:focus {
+        outline: none;
+    }
+    &.disabled {
+        background-color: #efefef;
+        @include hover_cursor(no-drop);
+        .icon {
+            color: $border-color !important;
+            &:hover {
+                cursor: auto !important;
+            }
+        }
+    }
+}
+
+.select-panel {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-height: 20px;
+    min-width: 20px;
+    background-color: #ffffff;
+    z-index: 500;
+    box-shadow: 1px 1px 6px 6px rgba(0, 0, 0, .05);
+    padding: 8px;
+    border-radius: $border-radius-base;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    .select-item {
+        padding: 8px 6px;
+        border-bottom: 1px solid $border-color;
+        &:last-child {
+            border-bottom: none;
+        }
+        @include hover_cursor(pointer);
+        &:hover {
+            background-color: #efefef;
+        }
+    }
+
+}

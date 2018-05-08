@@ -1,0 +1,16 @@
+<div class="step-wrap" [ngClass]="{'sm':small}">
+  <div class="step-box">
+    <ng-container *ngFor="let s of stepOptions;index as i;last as l">
+      <div class="step">
+        <div (click)="onClickStep(s,i)" class="step-header"
+             [ngClass]="{'active':s.active,'showing':this.showIndex===i,'responsive':responsive&&s.active}">
+          <span class="seq">{{i+1}}</span>
+          <span class="step-title">{{s.label}}</span>
+        </div>
+      </div>
+      <div *ngIf="!l" class="line-box">
+        <div class="line"></div>
+      </div>
+    </ng-container>
+  </div>
+</div>

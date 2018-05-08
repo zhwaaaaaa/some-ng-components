@@ -1,0 +1,33 @@
+<div [ngClass]="'paginator helper-clearfix'"
+     *ngIf="alwaysShow && (pageLinks && pageLinks.length >= 1)">
+  <div class="paginator-left-content" *ngIf="templateLeft">
+    <ng-container *ngTemplateOutlet="templateLeft; context: {$implicit: paginatorState}"></ng-container>
+  </div>
+  <a href="javascript:void(0)" class="paginator-first paginator-element"
+     (click)="changePageToFirst($event)" [ngClass]="{'state-disabled':isFirstPage()}">
+    首页
+  </a>
+  <a href="javascript:void(0)" class="paginator-prev paginator-element state-default corner-all"
+     (click)="changePageToPrev($event)" [ngClass]="{'state-disabled':isFirstPage()}">
+    <span class="icon-angle-left"></span>
+  </a>
+  <span class="paginator-pages">
+                <a href="javascript:void(0)" *ngFor="let pageLink of pageLinks"
+                   class="paginator-page paginator-element"
+                   (click)="onPageLinkClick($event, pageLink - 1)"
+                   [ngClass]="{'state-active': (pageLink-1 == getPage())}">
+                  {{pageLink}}
+                </a>
+   </span>
+  <a href="javascript:void(0)" class="paginator-next paginator-element state-default corner-all"
+     (click)="changePageToNext($event)" [ngClass]="{'state-disabled':isLastPage()}">
+    <span class="icon-angle-right"></span>
+  </a>
+  <a href="javascript:void(0)" class="paginator-last paginator-element"
+     (click)="changePageToLast($event)" [ngClass]="{'state-disabled':isLastPage()}">
+    末页
+  </a>
+  <div class="paginator-right-content" *ngIf="templateRight">
+    <ng-container *ngTemplateOutlet="templateRight; context: {$implicit: paginatorState}"></ng-container>
+  </div>
+</div>

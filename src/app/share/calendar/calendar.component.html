@@ -1,0 +1,46 @@
+<div #calendar class="calendar" [class.disabled]="disabled" [ngClass]="inputClass"
+     (click)="$event.stopPropagation(); showPanel()">
+  <input type="text" (blur)="onInputBlur($event)" [value]="value|date:format"
+         [placeholder]="placeholder" [disabled]="disabled">
+  <div class="right-icon" (click)="onClickIcon($event)">
+    <span class="icon-calendar"></span>
+  </div>
+  <ng-template [overlay]="dateCenter" (onOverlayClick)="closePanel()">
+    <div #datepicker class="datepicker" [@panelInout]="'in'">
+      <div class="datepicker-head">
+        <a class="last-y" [ngClass]="{'not-click':!canClickLast()}" (click)="clickLastYear()"><span
+          class="icon-double-angle-left"></span></a>
+        <a class="last-m" [ngClass]="{'not-click':!canClickLast()}" (click)="clickLastMonth()"><span
+          class="icon-angle-left"></span></a>
+        <a class="next-m" [ngClass]="{'not-click':!canClickNext()}" (click)="clickNextMonth()"><span
+          class="icon-angle-right"></span></a>
+        <a class="next-y" [ngClass]="{'not-click':!canClickNext()}" (click)="clickNextYear()"><span
+          class="icon-double-angle-right"></span></a>
+        <div>{{dateCenter.year()}} {{dateCenter.month()+1}}月</div>
+      </div>
+      <div class="datepicker-body" (click)="clickPanel()">
+        <table>
+          <thead>
+          <tr>
+            <th *ngFor="let w of weekList">
+              <div class="day-week">
+                {{w}}
+              </div>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let week of dates">
+            <td *ngFor="let d of week">
+              <div (click)="selectDay($event,d);" class="day"
+                   [ngClass]="{'current':d.isCurrentDay,'today':d.isToday,'out':!d.isCurrentMouth,'notPer':d.isOutRange}">
+                {{d.day}}
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-template>
+</div>

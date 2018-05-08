@@ -1,0 +1,20 @@
+<span #select tabindex="2" class="select" (blur)="onInputBlur()" [class.disabled]="disabled" [ngClass]="inputClass"
+      (click)="showPanel()">
+  <div class="select-content">{{value|singleMap:selectOption}}</div>
+  <div class="right-icon" (click)="onClickIcon($event)" [@iconState]="panelShowing?'on':'off'">
+    <span class="icon-angle-up"></span>
+  </div>
+  <ng-template [overlay]="panelShowing" (onOverlayClick)="closePanel()">
+    <div #selectPanel class="select-panel" [style.width]="panelWidth" [style.maxHeight]="maxHeight" *ngIf="panelShowing"
+         [@panelInout]="'in'">
+      <ng-template #defaultItem let-opt>
+        <div>{{opt.label}}</div>
+      </ng-template>
+      <div *ngFor="let opt of selectOption;index as i;first as f;last as l;" (click)="selectOne(opt,$event)"
+           class="select-item">
+        <ng-container
+          *ngTemplateOutlet="itemTemplate||defaultItem;context {$implicit:opt,index:i,last:l,first:f}"></ng-container>
+      </div>
+    </div>
+  </ng-template>
+</span>

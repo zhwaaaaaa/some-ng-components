@@ -1,0 +1,11 @@
+<div class="panel" [style.paddingBottom]="opened?'0.8em':'0'">
+  <div class="panel-header" [ngClass]="{'panel-header-line':headerLine&&!closed}">
+    <div class="fold" (click)="toggleState()"><i class="icon-{{opened?'expand':'spread'}}"></i></div>
+    <ng-content select="[panelHeader]"></ng-content>
+  </div>
+  <div class="panel-content-wrap" [@panelState]="opened?'on':'off'" (@panelState.done)="animateEnd()">
+    <div class="panel-content">
+      <ng-content select="[panelContent]"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.block-form-control {
+    padding: 0.4em;
+    border-radius: $border-radius-base;
+    font-size: 14px;
+    box-sizing: border-box;
+    max-width: $form-max-width;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid $border-color;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.ng-touched.ng-invalid > .block-form-control {
+    border-color: red;
+}

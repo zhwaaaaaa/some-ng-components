@@ -1,0 +1,7 @@
+<div class="growl-container">
+  <div *ngFor="let g of value" class="growl" [@growlInOut]="'in'"
+       (@growlInOut.done)="growlClosed(g)">
+    <span (click)="closeGrowl(g)" class="ico" [ngClass]="g.theme+' icon-'+g.theme"></span>
+    <span class="text">{{g.text}}</span>
+  </div>
+</div>

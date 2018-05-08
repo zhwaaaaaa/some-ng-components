@@ -1,0 +1,7 @@
+<div class="dialog-overlay" #overlay (click)="doOnClickOuter($event)">
+  <ng-template [ngIf]="showing">
+    <div #dialog class="dialog" (click)="onClickDialog($event)" [@dialogInout]="'in'" (@dialogInout.done)="doDestroy()">
+      <ng-template dialog-host></ng-template>
+    </div>
+  </ng-template>
+</div>

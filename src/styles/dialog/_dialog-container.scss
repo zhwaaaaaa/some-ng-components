@@ -1,0 +1,30 @@
+@import "../_variables";
+
+$dialog-padding: 15px;
+.dialog-container {
+    .dialog-overlay {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        z-index: 2000;
+    }
+}
+
+.dialog {
+    background: #ffffff;
+    border-radius: $border-radius-lg;
+    padding: $dialog-padding;
+    border: 0;
+    top: 50%;
+    left: 50%;
+    z-index: 2200;
+    position: fixed;
+    //overflow: hidden;
+    box-sizing: border-box;
+    width: 0;
+    box-shadow: 0 7px 25px 1px rgba(0, 0, 0, 0.1);
+}
