@@ -1,13 +1,13 @@
 import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from '../app/index/index.component';
 import {NgModule} from '@angular/core';
+import {ExampleDialogComponent} from './dialog/example-dialog.component';
 
 
 const exampleRoutes: Routes = [
     {
-        path: 'compose',
-        component: IndexComponent,
-        outlet: 'index'
+        path: 'dialog',
+        component: ExampleDialogComponent,
     }
 ];
 
