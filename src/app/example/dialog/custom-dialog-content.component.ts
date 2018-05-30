@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DialogComponent, DialogHandler} from '../../dialog/dialog-api';
+import {Option} from '../../share/common-class/option.class';
 
 @Component({
     template: `
@@ -9,6 +10,7 @@ import {DialogComponent, DialogHandler} from '../../dialog/dialog-api';
 })
 export class CustomDialogContentComponent implements DialogComponent<string> {
     param: string;
+
 
     constructor(public dialogHandler: DialogHandler) {
     }

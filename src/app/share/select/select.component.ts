@@ -14,7 +14,7 @@ import {animate, keyframes, state, style, transition, trigger} from '@angular/an
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
-    selector: 'app-select',
+    selector: 'su-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss'],
     animations: [

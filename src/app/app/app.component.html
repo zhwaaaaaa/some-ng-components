@@ -3,6 +3,22 @@
 <a [routerLink]="[{ outlets: { index: ['compose'] } }]">INDEX</a>
 <br>
 -------------------------------------------------------------------------------------------
+<h4>单选select</h4>
+<su-select [selectOption]="opts"></su-select>
+<hr>
+<h4>日期选择器</h4>
+<su-calendar></su-calendar>
+<hr>
+<h4>折叠panel</h4>
+<su-folding-panel>
+  <div panelHeader>
+    头部
+  </div>
+  <div panelContent>
+    内容
+  </div>
+</su-folding-panel>
+<hr>
 <div>
   <router-outlet></router-outlet>
 </div>

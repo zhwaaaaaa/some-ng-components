@@ -1,0 +1,18 @@
+<div class="address" [ngClass]="inputClass">
+  <div class="address-select-wrap helper-clearfix">
+    <select name="province" [(ngModel)]="province" (ngModelChange)="provinceChange($event)"
+            [disabled]="_disable" (focus)="onTouch()">
+      <option *ngFor="let item of provinces" [value]="item">{{item}}</option>
+    </select>
+    <select name="city" [(ngModel)]="city" (ngModelChange)="cityChange($event)"
+            [disabled]="_disable" (focus)="onTouch()">
+      <option *ngFor="let item of cities" [value]="item">{{item}}</option>
+    </select>
+    <select name="county" [(ngModel)]="county" (ngModelChange)="countyChange($event)"
+            [disabled]="_disable" (focus)="onTouch()">
+      <option *ngFor="let item of counties" [value]="item">{{item}}</option>
+    </select>
+  </div>
+  <input *ngIf="isNeedDetail" name="detail" type="text" [(ngModel)]="detail" (focus)="onTouch()"
+         (ngModelChange)="detailChange($event)">
+</div>

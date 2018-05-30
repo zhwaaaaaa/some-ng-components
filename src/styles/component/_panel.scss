@@ -3,18 +3,18 @@
     background-color: #ffffff;
     padding: 0 0.8em 0.6em 0.8em;
     border-radius: $border-radius-sm;
-
+    box-shadow: 1px 1px 8px 8px rgba(0,0,0,0.05);
     .panel-header {
         padding: 0.2em;
         position: relative;
-        min-height: 62px;
         padding-right: 50px;
         box-sizing: border-box;
         margin-left: 12px;
         .fold {
             position: absolute;
             right: 12px;
-            top: 24px;
+            top: 50%;
+            margin-top: -8px;
             color: #999999;
             width: 18px;
             height: 18px;

@@ -21,6 +21,10 @@ import {SelectComponent} from './select/select.component';
 import {DomHelperService} from './utils/dom-helper.service';
 import {OverlayDirective} from './directive/overlay.directive';
 import {NumberInputComponent} from './number-input/number-input.component';
+import {BackOverlayDirective} from './directive/back-overlay.directive';
+import {AutoSelectComponent} from './auto-select/auto-select.component';
+import {AddressComponent} from './address/address.component';
+import {CheckboxComponent} from './checkbox/checkbox.component';
 
 @NgModule({
     imports: [
@@ -34,6 +38,7 @@ import {NumberInputComponent} from './number-input/number-input.component';
         TabTitleDirective,
         TabContentDirective,
         OverlayDirective,
+        BackOverlayDirective,
         // pipe
         FirstPipe,
         MultiMapPipe,
@@ -50,6 +55,9 @@ import {NumberInputComponent} from './number-input/number-input.component';
         StepTabComponent,
         SelectComponent,
         NumberInputComponent,
+        AutoSelectComponent,
+        AddressComponent,
+        CheckboxComponent
     ],
 
     exports: [
@@ -77,6 +85,9 @@ import {NumberInputComponent} from './number-input/number-input.component';
         StepTabComponent,
         SelectComponent,
         NumberInputComponent,
+        AutoSelectComponent,
+        AddressComponent,
+        CheckboxComponent
     ],
     providers: [DomHelperService]
 })

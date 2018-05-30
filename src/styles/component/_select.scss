@@ -7,6 +7,9 @@
         padding-left: 8px;
     }
     text-align: left;
+    /*当select中没有文字的时候，修正baseline*/
+    vertical-align: middle;
+
     &:focus {
         outline: none;
     }

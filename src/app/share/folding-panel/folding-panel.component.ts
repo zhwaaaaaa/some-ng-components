@@ -4,7 +4,7 @@ import {PanelContentDirective} from '../directive/panel-content.directive';
 import {animate, style, transition, trigger, state} from '@angular/animations';
 
 @Component({
-    selector: 'folding-panel',
+    selector: 'su-folding-panel',
     templateUrl: './folding-panel.component.html',
     styleUrls: ['./folding-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,6 +17,16 @@ import {animate, style, transition, trigger, state} from '@angular/animations';
             ]),
             transition('off => on', [
                 animate('0.3s ease-in')
+            ])
+        ]),
+        trigger('iconState', [
+            state('on', style({transform: 'rotate(0deg)'})),
+            state('off', style({transform: 'rotate(-180deg)'})),
+            transition('on => off', [
+                animate('0.3s ease-in-out')
+            ]),
+            transition('off => on', [
+                animate('0.3s ease-in-out')
             ])
         ])
     ]

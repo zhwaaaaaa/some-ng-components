@@ -91,7 +91,7 @@ interface DateDes {
 }
 
 @Component({
-    selector: 'app-calendar',
+    selector: 'su-calendar',
     templateUrl: './calendar.component.html',
     styleUrls: ['./calendar.component.scss'],
     animations: [

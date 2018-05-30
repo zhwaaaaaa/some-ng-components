@@ -10,6 +10,7 @@ import {AlertDialogService} from './service/alert-dialog.service';
 import {ConfirmDialogService} from './service/confirm-dialog.service';
 import {GrowlComponent} from './growl/growl.component';
 import {GROWL_SERVICE_PRO} from './service/growl.service';
+import {OverlayService} from './service/overlay.service';
 
 @NgModule({
     imports: [CommonModule, BrowserAnimationsModule],
@@ -21,6 +22,7 @@ import {GROWL_SERVICE_PRO} from './service/growl.service';
         GrowlComponent,
     ],
     providers: [
+        OverlayService,
         DialogService,
         AlertDialogService,
         ConfirmDialogService,
