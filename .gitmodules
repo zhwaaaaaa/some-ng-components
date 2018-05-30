@@ -1,0 +1,3 @@
+[submodule "ng-sugar-release"]
+	path = ng-sugar-release
+	url = https://github.com/zhwaaaaaa/ng-sugar-release.git

@@ -5,13 +5,17 @@ import {ExampleDialogComponent} from './dialog/example-dialog.component';
 import {CustomDialogContentComponent} from './dialog/custom-dialog-content.component';
 import {ShareModule} from '../share/share.module';
 import {ButtonExpComponent} from './button/button-exp.component';
+import {NumInputComponent} from './number-input/num-input.component';
 
-const CPNT: any[] = [
-    ExampleDialogComponent,
-    ButtonExpComponent
-];
 
 const EN_CPNT: any[] = [CustomDialogContentComponent];
+
+const CPNT: any[] = [
+    ...EN_CPNT,
+    ExampleDialogComponent,
+    ButtonExpComponent,
+    NumInputComponent
+];
 
 @NgModule({
     imports: [
@@ -19,8 +23,8 @@ const EN_CPNT: any[] = [CustomDialogContentComponent];
         ExampleRoutingModule,
         ShareModule
     ],
-    declarations: CPNT.concat(EN_CPNT),
-    entryComponents: [EN_CPNT]
+    declarations:CPNT,
+    entryComponents: EN_CPNT
 })
 export class ExampleModule {
 }

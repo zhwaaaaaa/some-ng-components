@@ -4,7 +4,7 @@ import isNaN from 'lodash-es/isNaN';
 import {numAdd, numSub} from '../utils/num.util';
 
 @Component({
-    selector: 'app-number-input',
+    selector: 'su-number-input',
     templateUrl: './number-input.component.html',
     styleUrls: ['./number-input.component.scss'],
     providers: [{
