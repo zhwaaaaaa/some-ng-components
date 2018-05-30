@@ -13,3 +13,7 @@ select,tab,step,step-tab,folding-panel,select-btn.
     `yarn ` install the npm dependencies.
     
     `yarn start` start the project.
+
+- 项目演示地址：
+
+ [进入演示/GO](https://zhwaaaaaa.github.io/ng-sugar-release/dist/index.html)
