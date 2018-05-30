@@ -2,6 +2,7 @@ import {Component, ContentChild, EventEmitter, forwardRef, Input, OnInit, Templa
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Option} from '../common-class/option.class';
 import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
+import {SingleMapPipe} from '../pipe/single-map.pipe';
 
 
 @Component({
@@ -38,6 +39,16 @@ import {animate, keyframes, state, style, transition, trigger} from '@angular/an
     providers: [{provide: NG_VALUE_ACCESSOR, multi: true, useExisting: forwardRef(() => AutoSelectComponent)}]
 })
 export class AutoSelectComponent implements OnInit, ControlValueAccessor {
+    @Input()
+    get selectOption(): Option[] {
+        return this._selectOption;
+    }
+
+    set selectOption(value: Option[]) {
+        this._selectOption = value || [];
+        this.labelValue = SingleMapPipe.INSTANCE.transform(this.value, this._selectOption);
+    }
+
 
     @Input()
     get value(): number | string {
@@ -46,6 +57,7 @@ export class AutoSelectComponent implements OnInit, ControlValueAccessor {
 
     set value(value: number | string) {
         this._value = value;
+        this.labelValue = SingleMapPipe.INSTANCE.transform(value, this.selectOption);
     }
 
     @Input()
@@ -54,8 +66,7 @@ export class AutoSelectComponent implements OnInit, ControlValueAccessor {
     @Input()
     placeholder: string = '';
 
-    @Input()
-    selectedList: Option[];
+    private _selectOption: Option[];
 
     private _value: number | string;
 
@@ -111,7 +122,7 @@ export class AutoSelectComponent implements OnInit, ControlValueAccessor {
     }
 
     writeValue(obj: any): void {
-        this._value = obj;
+        this.value = obj;
     }
 
     registerOnChange(fn: any): void {
@@ -183,10 +194,10 @@ export class AutoSelectComponent implements OnInit, ControlValueAccessor {
 
     filterList(): void {
         if (!this.labelValue) {
-            this.matchedList = [...this.selectedList];
-        } else if (Array.isArray(this.selectedList)) {
+            this.matchedList = [...this._selectOption];
+        } else if (Array.isArray(this._selectOption)) {
 
-            this.matchedList = this.selectedList
+            this.matchedList = this._selectOption
                 .filter(opt => {
                     if (this.matchMode === 'contains') {
                         return opt.label.indexOf(this.labelValue) !== -1;

@@ -3,7 +3,7 @@
   <input type="text" (blur)="onInputBlur($event)" [value]="labelValue" (input)="onInputInput($event)"
          [placeholder]="placeholder" (focus)="onInputFocus()" [disabled]="disabled">
   <div class="right-icon" (click)="onClickIcon($event)" [@iconState]="panelShowing?'on':'off'">
-    <span class="icon-angle-up"></span>
+    <span class="fa fa-angle-up"></span>
   </div>
   <ng-template [overlay]="panelShowing" (onOverlayClick)="closePanel()">
     <div #selectPanel class="select-panel" [style.width]="panelWidth" [style.maxHeight]="maxHeight" *ngIf="panelShowing"

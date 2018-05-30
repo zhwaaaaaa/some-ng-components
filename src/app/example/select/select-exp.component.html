@@ -1,0 +1,12 @@
+<h4>单选下拉框</h4>
+
+<div>
+  <su-select [(ngModel)]="value" [selectOption]="opts" [maxHeight]="'300px'">
+    <ng-template let-opt>
+      <div class="helper-clearfix">
+        <img style="width: 100px;height: 100px;float: left;border-radius: 50%;"  [src]="opt.payload">{{opt.label}}
+      </div>
+    </ng-template>
+  </su-select>
+  {{value|singleMap:opts}}
+</div>
