@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod -aot -vc -oh -d zhwaaaaaa/ng-sugar-release/dist && rm -rf ng-sugar-release/dist && cp -r dist ng-sugar-release/",
+    "build": "ng build --prod -aot -vc -oh all -d ng-sugar-release/dist -bh ng-sugar-release/dist && rm -rf ng-sugar-release/dist && cp -r dist ng-sugar-release/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
