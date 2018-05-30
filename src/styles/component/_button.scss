@@ -25,6 +25,7 @@
         border-color: darken($border-color, 10%);
         color: darken($color, 10%);
     }
+
     &:disabled {
         border-color: lighten($border-color, 15%);
         color: lighten($color, 15%);
@@ -81,7 +82,7 @@ button, a.btn, a.fill-btn {
 }
 
 .btn.btn-default {
-    @include button_color(#d4d4d4, #ffffff);
+    @include button_color(#a1a1a1, #ffffff);
 }
 
 .btn.btn-primary {
@@ -125,49 +126,22 @@ button, a.btn, a.fill-btn {
 }
 
 .fill-btn.btn-primary {
-    @include fill_btn_color($brand-primary, #ffffff);
+    @include fill_btn_color(#ffffff, $brand-primary);
 }
 
 .fill-btn.btn-warning {
-    @include fill_btn_color($text-color-warning, #ffffff);
+    @include fill_btn_color(#ffffff, $brand-warning);
 }
 
 .fill-btn.btn-success {
-    @include fill_btn_color($brand-success, #ffffff);
+    @include fill_btn_color(#ffffff, $brand-success);
 }
 
 .fill-btn.btn-danger {
-    @include fill_btn_color($brand-danger, #ffffff);
+    @include fill_btn_color(#ffffff, $brand-danger);
 }
 
 .fill-btn.btn-info {
-    @include fill_btn_color($text-color-info, #ffffff);
+    @include fill_btn_color(#ffffff, $brand-info);
 }
 
-.file-upload-btn {
-    @extend .fill-btn.btn-default;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-.btn-radius {
-    @include button_shape($button_padding_horizontal_base, $button_padding_vertical_base, $text-size-base, ($text-size-lg*1.4+2*$button_padding_vertical_base+2)/2);
-}
-
-.back-button {
-    height: 62px;
-    width: 62px;
-    border-radius: 50%;
-    background-color: #ff9966;
-    color: #fff;
-    z-index: 999;
-    position: fixed;
-    right: 100px;
-    bottom: 100px;
-    cursor: pointer;
-}
-
-.back-button span {
-    display: block;
-    margin: 20px 16px;
-}

@@ -1,0 +1,23 @@
+ul.menu-box {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+
+    li {
+        margin: 0;
+        font-size: 18px;
+        color: #efefef;
+        text-align: center;
+        padding: 0;
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 12px 0;
+
+            &.active {
+                background-color: #0d1f3a;
+                color: #3fcef7;
+            }
+        }
+    }
+}

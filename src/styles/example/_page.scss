@@ -1,0 +1,63 @@
+$header-height: 60px;
+$left-menu-width: 208px;
+$header-menu-zIndex: 300;
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #f0f2f5;
+    font: 14px/1.5 "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif;
+}
+
+.page {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 1190px;
+    padding-top: $header-height;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: $header-height;
+    top: 0;
+    z-index: $header-menu-zIndex;
+    background-color: #0d3c63;
+    .logo {
+        height: 100%;
+        line-height: $header-height;
+        padding-left: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #0dd386;
+    }
+}
+
+.left-menu {
+    width: $left-menu-width;
+    position: fixed;
+    top: $header-height + 16px;
+    bottom: 0;
+    left: 0;
+    z-index: $header-menu-zIndex;
+    background: #2B303B;
+}
+
+.main {
+    padding-left: $left-menu-width;
+    height: 100%;
+    position: relative;
+    background-color: #f0f2f5;
+    box-sizing: border-box;
+    .content {
+        min-height: 100%;
+        background-color: #f0f2f5;
+        padding: 16px 0 16px 0;
+        box-sizing: border-box;
+    }
+}

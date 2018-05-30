@@ -1,24 +1,27 @@
-<h1>展示案例</h1>
-<router-outlet name="index"></router-outlet>
-<a [routerLink]="[{ outlets: { index: ['compose'] } }]">INDEX</a>
-<br>
--------------------------------------------------------------------------------------------
-<h4>单选select</h4>
-<su-select [selectOption]="opts"></su-select>
-<hr>
-<h4>日期选择器</h4>
-<su-calendar></su-calendar>
-<hr>
-<h4>折叠panel</h4>
-<su-folding-panel>
-  <div panelHeader>
-    头部
+<div class="page">
+  <div class="header">
+    <div class="logo ui-grid-col-11">
+      NG SUGAR
+    </div>
+
   </div>
-  <div panelContent>
-    内容
+  <div class="left-menu">
+    <ul class="menu-box">
+      <li>
+        <a routerLink="/btn" routerLinkActive="active">按钮</a>
+      </li>
+      <li>
+        <a routerLink="/dialog" routerLinkActive="active">对话框</a>
+      </li>
+
+    </ul>
   </div>
-</su-folding-panel>
-<hr>
-<div>
-  <router-outlet></router-outlet>
+  <div class="main">
+    <div class="content">
+      <div class="panel">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
 </div>

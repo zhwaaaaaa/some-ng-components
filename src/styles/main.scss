@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variables";
-
+//common
 @import "common/normalize";
 @import "common/utils";
 @import "common/grid";
 @import "common/text";
 @import "common/form";
-
+//component
 @import "component/button";
 @import "component/breadcrumbs";
 @import "component/paginator";
@@ -19,11 +19,12 @@
 @import "component/step";
 @import "component/select";
 @import "component/number-input";
-
+//dialog
 @import "dialog/dialog";
 @import "dialog/dialog-container";
 @import "dialog/growl";
-
-@import "common/app";
-
+// example
+@import "example/app";
+@import "example/page";
+@import "example/menu";
 
